@@ -1,0 +1,8 @@
+
+Jsquid:S1068".Remove this unused "properties" private field.(õ÷Þà8ÁÌ–¡ó,
+Qsquid:S1068"0Remove this unused "suppressDate" private field.(ÁäÝ°ùÿÿÿÿ8ÁÌ–¡ó,
+Ssquid:S1135"2Complete the task associated to this TODO comment.(¼†çðüÿÿÿÿ8ÁÌ–¡ó,
+Csquid:S1481"'Remove this unused "sb" local variable.(í…Ò‰8ÁÌ–¡ó,
+Rsquid:S1854"6Remove this useless assignment to local variable "sb".(í…Ò‰8ÁÌ–¡ó,
+{squid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰8ÁÌ–¡ó,
+[squid:S1161":Add the "@Override" annotation above this method signature(Ïž‡÷ÿÿÿÿÿ8ÁÌ–¡ó,

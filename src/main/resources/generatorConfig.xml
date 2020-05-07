@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--      <properties resource="generator.properties"></properties> -->
+    <!--<classPathEntry location="D:\maven_ck\mvnRepository\mysql\mysql-connector-java\6.0.6\mysql-connector-java-6.0.6.jar"/>-->
+    <context id="default" targetRuntime="MyBatis3">
+        <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- 查询语句SQL -->
+        <plugin type="com.tools.gentool.MyExtraSQLPlugin">
+            <property name="targetProject" value="C:\IDEA\workspace\ciga\common\src\main\java"/>
+            <property name="targetPackage" value="com.vmcshop.mall.cigarette.mapper"/>
+        </plugin>
+
+
+        <!--代码上的注释规则
+            属性：properties
+            name为suppressAllComments   false时打开注释，true时为关闭。
+            name为suppressDate          false打开时间标志，true时关闭。-->
+        <commentGenerator type="com.tools.gentool.MyCommentGenerator" >
+            <property name="suppressAllComments" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!--mysql驱动账号密码-->
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://dev.mysql:3306/ciga?serverTimezone=UTC"
+                userId="root"
+                password="Vmcshop123!@#" >
+            <property name="useInformationSchema" value="true"></property>
+        </jdbcConnection>
+
+        <!--domain存放位置-->
+        <javaModelGenerator targetPackage="com.vmcshop.mall.common.model.sale" targetProject="C:\IDEA\workspace\ciga\common\src\main\java">
+            <property name="constructorBased" value="false"/>
+            <property name="immutable" value="false"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <!--Mapper.xml存放位置-->
+        <sqlMapGenerator targetPackage="com.vmcshop.mall.cigarette.mapper" targetProject="C:\IDEA\workspace\ciga\mall-cigarette\src\main\resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!--Mapper.java存放位置-->
+        <javaClientGenerator targetPackage="com.vmcshop.mall.cigarette.mapper" targetProject="C:\IDEA\workspace\ciga\mall-cigarette\src\main\java" type="XMLMAPPER">
+            <property name="enableSubPackages" value=""/>
+            <property name="exampleMethodVisibility" value=""/>
+            <property name="methodNameCalculator" value=""/>
+            <property name="rootInterface" value=""/>
+        </javaClientGenerator>
+
+        <table tableName="t_tianxiang" domainObjectName="Tian"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <!-- <property name="useActualColumnNames" value="true" /> -->
+            <!--<generatedKey column="id" sqlStatement="MySql"/>-->
+        </table>
+
+    </context>
+</generatorConfiguration>
